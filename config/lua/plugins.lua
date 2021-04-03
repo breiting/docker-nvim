@@ -14,5 +14,12 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
+
     use 'gruvbox-community/gruvbox'
+    -- LSP
+    use 'neovim/nvim-lspconfig'
+    use 'nvim-lua/completion-nvim'
+    use 'tjdevries/nlua.nvim'
+    use 'tjdevries/lsp_extensions.nvim'
+
 end)

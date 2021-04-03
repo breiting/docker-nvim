@@ -2,5 +2,6 @@
 
 vim.g.mapleader = ' '
 require('plugins')
+require('lsp')
 require('options')
 require('bindings')
