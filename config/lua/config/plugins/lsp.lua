@@ -2,6 +2,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
+      'saghen/blink.cmp',
       {
         "folke/lazydev.nvim",
         ft = "lua", -- only load on lua files
@@ -15,7 +16,25 @@ return {
       },
     },
     config = function()
-      require("lspconfig").lua_ls.setup {}
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
+
+      require("lspconfig").lua_ls.setup { capabilities = capabilities }
+      require("lspconfig").pylsp.setup {
+        capabilities = capabilities,
+        settings = {
+          pylsp = {
+            plugins = {
+              pycodestyle = {
+                ignore = { 'W391' },
+                maxLineLength = 120
+              },
+              rope_autoimport = {
+                enabled = true
+              }
+            }
+          }
+        }
+      }
 
       -- Format buffer upon saving the file
       vim.api.nvim_create_autocmd('LspAttach', {
