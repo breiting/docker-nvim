@@ -7,4 +7,5 @@ run:
 	docker run --rm --tty --interactive \
 		--user 1000:1000 \
 		--volume "${PWD}/config:/home/docker/.config/nvim" \
+		--volume "${PWD}/local:/home/docker/.local" \
 		nvim:latest
