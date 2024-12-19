@@ -26,7 +26,7 @@ vim.opt.clipboard = "unnamedplus"
 
 -- Setup lazy.nvim
 require("lazy").setup({
-  spec = { import = "config.plugins" },
+  spec = { import = "custom.plugins" },
   change_detection = {
     notify = false,
   }
