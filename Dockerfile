@@ -46,7 +46,7 @@ RUN mkdir /opt/lua-lsp && \
 RUN \
   apt-get update && \
   apt-get -y install \
-    sudo ripgrep tree && \
+    sudo ripgrep tree npm && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
