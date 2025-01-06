@@ -1,8 +1,6 @@
-# Dockerfile for nightly nvim release
+# Docker environment for development
 
-This repos gives a Docker image for running the latest and greatest neovim source code with the
-checked in init files.
-
+This repository is my development environment using docker. It offers a Python base image and a configured neovim configuration.
 
 # Build & Run
 
